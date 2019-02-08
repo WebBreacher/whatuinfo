@@ -31,9 +31,9 @@
     print "    <link rel='stylesheet' href='w3-colors-metro.css'>";
     print "    <style>";
     print "        p.header {font-weight:bold;}"; 
-    print "        p.mono {font-family: monospace; font-size:18px!important;}";
     print "        div.center {margin: auto; width: 80%; padding: 10px;}";
     print "        td {vertical-align: middle; padding: 15px;)";
+    print "        td.mono {font-family: monospace; font-size:18px!important;}";
     print "    </style>";
     print "</head>";
 
