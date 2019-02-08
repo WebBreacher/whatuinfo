@@ -38,7 +38,7 @@
 
     print "<body>";
   
-    print "  </br>"
+    print "  </br>";
     print "  <div class='center w3-panel w3-card-2 w3-round-xlarge'>";
     print "  <h2>This is how your browser appears to other sites.</h2>";
     print "  <p>This page echoes back to you several pieces of data that web sites 'know' about you. It is meant as a situational awareness tool for you to see how your device presents itself to other sites. It also leverages free <a href src='https://lite.ip2location.com/'>IP2Location</a> databases to show your IP location and such. It is not 100% accurate.</p>";
