@@ -53,7 +53,7 @@
     print "         <tr class='w3-hover-blue'><td class='header'>Country Code:</td><td class='mono'>" . htmlspecialchars($countrycode) . "</td></tr>";
     print "         <tr class='w3-hover-black'><td class='header'>Country Name:</td><td class='mono'>" . htmlspecialchars($countryname) . "</td></tr>";
     print "         <tr class='w3-hover-blue'><td class='header'>Region:</td><td class='mono'>" . htmlspecialchars($region) . "</td></tr>";
-    print "     </table>"
+    print "     </table>";
     print "     <p class='header'>City:</p><p class='mono'> " . htmlspecialchars($city) . "</p>";
     print "     <p class='header'>Zip Code:</p><p class='mono'> " . htmlspecialchars($zipcode) . "</p>";
     print "     <p class='header'>Latitude:</p><p class='mono'> " . htmlspecialchars($lat) . "</p>";
