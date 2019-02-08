@@ -64,9 +64,9 @@
     print "     <h4>IP2Location Data:</h4> <!-- https://github.com/chrislim2888/IP2Location-PHP-Module -->"; 
     print "     <table class='w3-table-all'>";
     print "         <thead><tr class='w3-light-grey'><th>Item</th><th>IP2Location Value</th></tr></thead>";
-    print "         <tr class='w3-hover-blue'><td class='header'>Country Code, Name, Region:</td><td class='mono'>" . htmlspecialchars($countrycode) . ", " . htmlspecialchars($countryname) . ", " . htmlspecialchars($region) . "</td></tr>";
-    print "         <tr class='w3-hover-black'><td class='header'>City, Zip Code:</td><td class='mono'>" . htmlspecialchars($city) . ", " . htmlspecialchars($zipcode) . "</td></tr>";
-    print "         <tr class='w3-hover-blue'><td class='header'>Latitude, Longitude:</td><td class='mono'>" . htmlspecialchars($lat) . ", " . htmlspecialchars($lon) . "</td></tr>";
+    print "         <tr class='w3-hover-blue'><td class='header'>Country Name (Code):</td><td class='mono'>" . htmlspecialchars($countryname) . "( " . htmlspecialchars($countrycode) . " )</td></tr>";
+    print "         <tr class='w3-hover-black'><td class='header'>City, Region, Zip Code:</td><td class='mono'>" . htmlspecialchars($city) . ", " . htmlspecialchars($region) . '   ' . htmlspecialchars($zipcode) . "</td></tr>";
+    print "         <tr class='w3-hover-blue'><td class='header'>Latitude, Longitude:</td><td class='mono'>" . htmlspecialchars($lat) . ", " . htmlspecialchars($lon) . " <a href src='https://www.google.com/maps/place/" . htmlspecialchars($lat) . "," . htmlspecialchars($lon) . "' target='_blank'>Google Maps Link</a></td></tr>";
     print "         <tr class='w3-hover-black'><td class='header'>VPN Status:</td><td class='mono'>" . htmlspecialchars($vpn) . "</td></tr>";
     print "     </table>";
     print "     </br>";
