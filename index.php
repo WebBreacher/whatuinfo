@@ -47,18 +47,15 @@
     print "    </div>";
     print "</div>";
 
-    print "  </br>";
-
     print "  <div class='center w3-panel w3-card-2 w3-round-xlarge'>";
     print "     <table class='w3-table-all'>";
     print "     <h4>General Data:</h4>"; 
     print "         <thead><tr class='w3-light-grey'><th>Item</th><th>Value</th></tr></thead>";
-    print "         <tr class='w3-hover-blue'><td class='header'>Your IP Address:</td><td class='mono'>" . $ip . "</td></tr>";
+    print "         <tr class='w3-hover-blue'><td class='header'>Your IP Address:</td><td class='mono'>$ip</td></tr>";
     print "         <tr class='w3-hover-black'><td class='header'>Your User-Agent:</td><td class='mono'>" . htmlspecialchars($agent) . "</td></tr>";
     print "     </table>";
     print "     </br>";
     print "  </div>";
-
     print "  </br>";
     
     print "  <div class='center w3-panel w3-card-2 w3-round-xlarge'>";
@@ -67,12 +64,11 @@
     print "         <thead><tr class='w3-light-grey'><th>Item</th><th>IP2Location Value</th></tr></thead>";
     print "         <tr class='w3-hover-blue'><td class='header'>Country Name (Code):</td><td class='mono'>" . htmlspecialchars($countryname) . "( " . htmlspecialchars($countrycode) . " )</td></tr>";
     print "         <tr class='w3-hover-black'><td class='header'>City, Region, Zip Code:</td><td class='mono'>" . htmlspecialchars($city) . ", " . htmlspecialchars($region) . '   ' . htmlspecialchars($zipcode) . "</td></tr>";
-    print "         <tr class='w3-hover-blue'><td class='header'>Latitude, Longitude:</td><td class='mono'><a href src='https://www.google.com/maps/place/$latlon' target='_blank'>" . $latlon . "</a></td></tr>";
+    print "         <tr class='w3-hover-blue'><td class='header'>Latitude, Longitude:</td><td class='mono'><a href src='https://www.google.com/maps/place/$latlon' target='_blank'>$latlon</a></td></tr>";
     print "         <tr class='w3-hover-black'><td class='header'>VPN Status:</td><td class='mono'>" . htmlspecialchars($vpn) . "</td></tr>";
     print "     </table>";
     print "     </br>";
     print "   </div>";
-    #print "</div>";
 
     print "<div class='w3-container'>";
     print "    <div class='w3-panel w3-card-2 w3-metro-dark-blue'>";
