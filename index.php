@@ -2,27 +2,26 @@
     require_once 'IP2Location.php';
     
     $ip=$_SERVER['REMOTE_ADDR'];
-    $agent=$_SERVER['HTTP_USER_AGENT'];
-    $refer=$_SERVER['HTTP-REFERER'];
+    $agent=htmlspecialchars($_SERVER['HTTP_USER_AGENT']);
+    $refer=htmlspecialchars($_SERVER['HTTP-REFERER']);
 
     # IP2Location Stuff
     $db = new \IP2Location\Database('./databases/IP2PROXY-LITE-PX4.BIN', \IP2Location\Database::FILE_IO);
     $ip=$_SERVER['REMOTE_ADDR'];
     $records = $db->lookup($ip, \IP2Location\Database::ALL);
-    $vpn=$records['countryCode'];
+    $vpn=htmlspecialchars($records['countryCode']);
 
     $db = new \IP2Location\Database('./databases/IP2LOCATION-LITE-DB11.BIN', \IP2Location\Database::FILE_IO);
-    $ip=$_SERVER['REMOTE_ADDR'];
     $records = $db->lookup($ip, \IP2Location\Database::ALL);
-    $countrycode=$records['countryCode'];
-    $countryname=$records['countryName'];
-    $region=$records['regionName'];
-    $city=$records['cityName'];
+    $countrycode=htmlspecialchars($records['countryCode']);
+    $countryname=htmlspecialchars($records['countryName']);
+    $region=htmlspecialchars($records['regionName']);
+    $city=htmlspecialchars($records['cityName']);
     $lat=$records['latitude'];
     $lon=$records['longitude'];
     $latlon=htmlspecialchars($lat) . ", " . htmlspecialchars($lon);
-    $timezone=$records['timeZone'];
-    $zipcode=$records['zipCode'];
+    $timezone=htmlspecialchars($records['timeZone']);
+    $zipcode=htmlspecialchars($records['zipCode']);
 
     print "<html>";
 
@@ -52,7 +51,8 @@
     print "     <h4>General Data:</h4>"; 
     print "         <thead><tr class='w3-light-grey'><th>Item</th><th>Value</th></tr></thead>";
     print "         <tr class='w3-hover-blue'><td class='header'>Your IP Address:</td><td class='mono'>$ip</td></tr>";
-    print "         <tr class='w3-hover-black'><td class='header'>Your User-Agent:</td><td class='mono'>" . htmlspecialchars($agent) . "</td></tr>";
+    print "         <tr class='w3-hover-black'><td class='header'>Your User-Agent:</td><td class='mono'>$agent</td></tr>";
+    print "         <tr class='w3-hover-blue'><td class='header'>HTTP Referrer:</td><td class='mono'>$refer</td></tr>";
     print "     </table>";
     print "     </br>";
     print "  </div>";
@@ -62,10 +62,10 @@
     print "     <h4>IP2Location Data:</h4> <!-- https://github.com/chrislim2888/IP2Location-PHP-Module -->"; 
     print "     <table class='w3-table-all'>";
     print "         <thead><tr class='w3-light-grey'><th>Item</th><th>IP2Location Value</th></tr></thead>";
-    print "         <tr class='w3-hover-blue'><td class='header'>Country Name (Code):</td><td class='mono'>" . htmlspecialchars($countryname) . "( " . htmlspecialchars($countrycode) . " )</td></tr>";
-    print "         <tr class='w3-hover-black'><td class='header'>City, Region, Zip Code:</td><td class='mono'>" . htmlspecialchars($city) . ", " . htmlspecialchars($region) . '   ' . htmlspecialchars($zipcode) . "</td></tr>";
+    print "         <tr class='w3-hover-blue'><td class='header'>Country Name (Code):</td><td class='mono'>$countryname ( $countrycode )</td></tr>";
+    print "         <tr class='w3-hover-black'><td class='header'>City, Region, Zip Code:</td><td class='mono'>$city, $region    $zipcode</td></tr>";
     print "         <tr class='w3-hover-blue'><td class='header'>Latitude, Longitude:</td><td class='mono'>$latlon</td></tr>";
-    print "         <tr class='w3-hover-black'><td class='header'>VPN Status:</td><td class='mono'>" . htmlspecialchars($vpn) . "</td></tr>";
+    print "         <tr class='w3-hover-black'><td class='header'>VPN Status:</td><td class='mono'>$vpn</td></tr>";
     print "     </table>";
     print "     </br>";
     print "   </div>";
