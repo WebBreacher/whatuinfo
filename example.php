@@ -34,6 +34,6 @@ $lon=$records['longitude'];
 $timezone=$records['timeZone'];
 $zipcode=$records['zipCode'];
 
-echo $ip, $countrycode, $countryname
+
 
 ?>
