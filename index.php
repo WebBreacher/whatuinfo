@@ -32,13 +32,14 @@
     print "    <style>";
     print "        p.header {font-weight:bold;}"; 
     print "        p.mono {font-family: monospace; font-size:18px!important;}";
-    print "        div.center {margin: auto; width: 60%; border: 3px solid #73AD21; padding: 10px;}";
+    print "        div.center {margin: auto; width: 70%; padding: 10px;}";
     print "    </style>";
     print "</head>";
 
     print "<body>";
   
-    print "  <div style='width:50%' class='center w3-panel w3-card-2 w3-round-xlarge'>";
+    print "  </br>"
+    print "  <div class='center w3-panel w3-card-2 w3-round-xlarge'>";
     print "  <h2>This is how your browser appears to other sites.</h2>";
     print "  <p>This page echoes back to you several pieces of data that web sites 'know' about you. It is meant as a situational awareness tool for you to see how your device presents itself to other sites. It also leverages free <a href src='https://lite.ip2location.com/'>IP2Location</a> databases to show your IP location and such. It is not 100% accurate.</p>";
     print "  </br>";
@@ -51,7 +52,7 @@
     print "     </br>";
     print "   </div>";
 
-    print "  <div style='width:50%' class='center w3-panel w3-card-2 w3-round-xlarge'>";
+    print "  <div class='center w3-panel w3-card-2 w3-round-xlarge'>";
     print "     <h2>IP2Location Data:</h2> <!-- https://github.com/chrislim2888/IP2Location-PHP-Module -->"; 
     print "     <table class='w3-table-all'>";
     print "         <thead><tr class='w3-light-grey'><th>Item</th><th>IP2Location Value</th></tr></thead>";
