@@ -3,6 +3,24 @@
     $agent=$_SERVER['HTTP_USER_AGENT'];
     $refer=$_SERVER['HTTP-REFERER'];
 
+    # IP2Location Stuff
+    $db = new \IP2Location\Database('./databases/IP2PROXY-LITE-PX4.BIN', \IP2Location\Database::FILE_IO);
+    $ip=$_SERVER['REMOTE_ADDR'];
+    $records = $db->lookup($ip, \IP2Location\Database::ALL);
+    $vpn=$records['countryCode'];
+
+    $db = new \IP2Location\Database('./databases/IP2LOCATION-LITE-DB11.BIN', \IP2Location\Database::FILE_IO);
+    $ip=$_SERVER['REMOTE_ADDR'];
+    $records = $db->lookup($ip, \IP2Location\Database::ALL);
+    $countrycode=$records['countryCode'];
+    $countryname=$records['countryName'];
+    $region=$records['regionName'];
+    $city=$records['cityName'];
+    $lat=$records['latitude'];
+    $lon=$records['longitude'];
+    $timezone=$records['timeZone'];
+    $zipcode=$records['zipCode'];
+
     print "<html>";
 
     print "<head>";
@@ -19,12 +37,24 @@
 
     print "<div class='w3-container'>";
     print "  <h2>This is how your browser appears to other sites.</h2>";
-    print "  <p>This page echoes back to you several pieces of data that web sites 'know' about you. It is meant as a situational awareness tool for you to see how your device presents itself to other sites.</p>";
+    print "  <p>This page echoes back to you several pieces of data that web sites 'know' about you. It is meant as a situational awareness tool for you to see how your device presents itself to other sites. It also leverages free <a href src='https://lite.ip2location.com/'>IP2Location</a> databases to show your IP location and such. It is not 100% accurate.</p>";
     print "  </br>";
 
     print "  <div class='w3-panel w3-card-2 w3-round-xlarge'><p class='header'>External IP:</p><p class='mono'> " . $ip . "</p></div>";
     print "  <div class='w3-panel w3-card-2 w3-round-xlarge'><p class='header'>User-Agent:</p><p class='mono'> " . htmlspecialchars($agent) . "</p></div>";
     print "  <div class='w3-panel w3-card-2 w3-round-xlarge'><p class='header'>HTTP Referrer:</p><p class='mono'> " . htmlspecialchars($refer) . "</p></div>";
+  
+    print "  <div class='w3-panel w3-card-2 w3-round-xlarge'>";
+    print "     <h2>IP2Location Data:</h2>";
+    print "     <p class='header'>Country Code:</p><p class='mono'> " . htmlspecialchars($countrycode) . "</p>";
+    print "     <p class='header'>Country Name:</p><p class='mono'> " . htmlspecialchars($countryname) . "</p>";
+    print "     <p class='header'>Region:</p><p class='mono'> " . htmlspecialchars($region) . "</p>";
+    print "     <p class='header'>City:</p><p class='mono'> " . htmlspecialchars($city) . "</p>";
+    print "     <p class='header'>Zip Code:</p><p class='mono'> " . htmlspecialchars($zipcode) . "</p>";
+    print "     <p class='header'>Latitude:</p><p class='mono'> " . htmlspecialchars($lat) . "</p>";
+    print "     <p class='header'>Longitude:</p><p class='mono'> " . htmlspecialchars($lon) . "</p>";
+    print "     <p class='header'>VPN Status:</p><p class='mono'> " . htmlspecialchars($vpn) . "</p>";
+    print "   </div";
 
     print "</div>";
     print "<div class='w3-container'>";
