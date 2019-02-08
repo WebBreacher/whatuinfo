@@ -20,6 +20,7 @@
     $city=$records['cityName'];
     $lat=$records['latitude'];
     $lon=$records['longitude'];
+    $latlon=htmlspecialchars($lat) . "," . htmlspecialchars($lon);
     $timezone=$records['timeZone'];
     $zipcode=$records['zipCode'];
 
@@ -66,7 +67,7 @@
     print "         <thead><tr class='w3-light-grey'><th>Item</th><th>IP2Location Value</th></tr></thead>";
     print "         <tr class='w3-hover-blue'><td class='header'>Country Name (Code):</td><td class='mono'>" . htmlspecialchars($countryname) . "( " . htmlspecialchars($countrycode) . " )</td></tr>";
     print "         <tr class='w3-hover-black'><td class='header'>City, Region, Zip Code:</td><td class='mono'>" . htmlspecialchars($city) . ", " . htmlspecialchars($region) . '   ' . htmlspecialchars($zipcode) . "</td></tr>";
-    print "         <tr class='w3-hover-blue'><td class='header'>Latitude, Longitude:</td><td class='mono'>" . htmlspecialchars($lat) . ", " . htmlspecialchars($lon) . " <a href src='https://www.google.com/maps/place/" . htmlspecialchars($lat) . "," . htmlspecialchars($lon) . "' target='_blank'>Google Maps Link</a></td></tr>";
+    print "         <tr class='w3-hover-blue'><td class='header'>Latitude, Longitude:</td><td class='mono'><a href src='https://www.google.com/maps/place/" . $latlon . "' target='_blank'>" . $latlon . "</a></td></tr>";
     print "         <tr class='w3-hover-black'><td class='header'>VPN Status:</td><td class='mono'>" . htmlspecialchars($vpn) . "</td></tr>";
     print "     </table>";
     print "     </br>";
