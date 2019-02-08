@@ -33,6 +33,7 @@
     print "        p.header {font-weight:bold;}"; 
     print "        p.mono {font-family: monospace; font-size:18px!important;}";
     print "        div.center {margin: auto; width: 80%; padding: 10px;}";
+    print "        td {vertical-align: middle; padding: 15px;)";
     print "    </style>";
     print "</head>";
 
