@@ -73,7 +73,7 @@
     print "<div class='w3-container'>";
     print "    <div class='w3-panel w3-card-2 w3-metro-dark-blue'>";
     print "        <h4>Details</h4>";
-    print "        <p>This site created and maintained by Micah (<a href src='https://twitter.com/webbreacher' target='_blank'>WebBreacher</a>) Hoffman (<a href src='https://webbreacher.com' target='_blank'>https://webbreacher.com</a>). HUGE thank you to the fabulous <a href src='https://www.w3school.com' target='_blank'>https://www.w3school.com</a> site for all their HTML/CSS info.</p>";
+    print "        <p>This site created and maintained by Micah (<a href src='https://twitter.com/webbreacher' target='_blank'>WebBreacher</a>) Hoffman (<a href src='https://webbreacher.com' target='_blank'>https://webbreacher.com</a>). HUGE thank you to the fabulous <a href src='https://www.w3school.com' target='_blank'>https://www.w3school.com</a> site for all their HTML/CSS info. Code for this site is available at <a href src='https://github.com/WebBreacher/whatuinfo'>https://github.com/WebBreacher/whatuinfo</a></p>";
     print "    </div>";
     print "</div>";
     print "</body>";
