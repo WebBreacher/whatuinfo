@@ -20,40 +20,20 @@ require_once 'IP2Location.php';
 $db = new \IP2Location\Database('./databases/IP2PROXY-LITE-PX4.BIN', \IP2Location\Database::FILE_IO);
 $ip=$_SERVER['REMOTE_ADDR'];
 $records = $db->lookup($ip, \IP2Location\Database::ALL);
-
-echo '<pre>';
-echo 'IP Number             : ' . $records['ipNumber'] . "\n";
-echo 'IP Version            : ' . $records['ipVersion'] . "\n";
-echo 'IP Address            : ' . $records['ipAddress'] . "\n";
-echo 'Country Code          : ' . $records['countryCode'] . "\n";
-echo 'Country Name          : ' . $records['countryName'] . "\n";
-echo 'Region Name           : ' . $records['regionName'] . "\n";
-echo 'City Name             : ' . $records['cityName'] . "\n";
-echo 'Latitude              : ' . $records['latitude'] . "\n";
-echo 'Longitude             : ' . $records['longitude'] . "\n";
-echo 'Time Zone             : ' . $records['timeZone'] . "\n";
-echo 'ZIP Code              : ' . $records['zipCode'] . "\n";
-echo 'Domain Name           : ' . $records['domainName'] . "\n";
-echo 'ISP Name              : ' . $records['isp'] . "\n";
-echo '</pre>';
+$vpn=$records['countryCode'];
 
 $db = new \IP2Location\Database('./databases/IP2LOCATION-LITE-DB11.BIN', \IP2Location\Database::FILE_IO);
 $ip=$_SERVER['REMOTE_ADDR'];
 $records = $db->lookup($ip, \IP2Location\Database::ALL);
+$countrycode=$records['countryCode'];
+$countryname=$records['countryName'];
+$region=$records['regionName'];
+$city=$records['cityName'];
+$lat=$records['latitude'];
+$lon=$records['longitude'];
+$timezone=$records['timeZone'];
+$zipcode=$records['zipCode'];
 
-echo '<pre>';
-echo 'IP Number             : ' . $records['ipNumber'] . "\n";
-echo 'IP Version            : ' . $records['ipVersion'] . "\n";
-echo 'IP Address            : ' . $records['ipAddress'] . "\n";
-echo 'Country Code          : ' . $records['countryCode'] . "\n";
-echo 'Country Name          : ' . $records['countryName'] . "\n";
-echo 'Region Name           : ' . $records['regionName'] . "\n";
-echo 'City Name             : ' . $records['cityName'] . "\n";
-echo 'Latitude              : ' . $records['latitude'] . "\n";
-echo 'Longitude             : ' . $records['longitude'] . "\n";
-echo 'Time Zone             : ' . $records['timeZone'] . "\n";
-echo 'ZIP Code              : ' . $records['zipCode'] . "\n";
-echo 'Domain Name           : ' . $records['domainName'] . "\n";
-echo 'ISP Name              : ' . $records['isp'] . "\n";
-echo '</pre>';
+echo $ip, $countrycode, $countryname
+
 ?>
