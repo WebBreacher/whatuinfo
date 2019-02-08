@@ -1,4 +1,6 @@
 <?php
+    require_once 'IP2Location.php';
+    
     $ip=$_SERVER['REMOTE_ADDR'];
     $agent=$_SERVER['HTTP_USER_AGENT'];
     $refer=$_SERVER['HTTP-REFERER'];
