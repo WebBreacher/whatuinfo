@@ -47,18 +47,21 @@
     print "  <div class='w3-panel w3-card-2 w3-round-xlarge'><p class='header'>HTTP Referrer:</p><p class='mono'> " . htmlspecialchars($refer) . "</p></div>";
   
     print "  <div class='w3-panel w3-card-2 w3-round-xlarge'>";
-    print "     <h2>IP2Location Data:</h2>";
-    print "     <p class='header'>Country Code:</p><p class='mono'> " . htmlspecialchars($countrycode) . "</p>";
-    print "     <p class='header'>Country Name:</p><p class='mono'> " . htmlspecialchars($countryname) . "</p>";
-    print "     <p class='header'>Region:</p><p class='mono'> " . htmlspecialchars($region) . "</p>";
+    print "     <h2>IP2Location Data:</h2> <!-- https://github.com/chrislim2888/IP2Location-PHP-Module -->"; 
+    print "     <table  class='w3-table-all'>";
+    print "         <thead><tr class='w3-light-grey'><th>Item</th><th>IP2Location Value</th></tr></thead>";
+    print "         <tr class='w3-hover-blue'><td class='header'>Country Code:</td><td class='mono'>" . htmlspecialchars($countrycode) . "</td></tr>";
+    print "         <tr class='w3-hover-black'><td class='header'>Country Name:</td><td class='mono'>" . htmlspecialchars($countryname) . "</td></tr>";
+    print "         <tr class='w3-hover-blue'><td class='header'>Region:</td><td class='mono'>" . htmlspecialchars($region) . "</td></tr>";
+    print "     </table>"
     print "     <p class='header'>City:</p><p class='mono'> " . htmlspecialchars($city) . "</p>";
     print "     <p class='header'>Zip Code:</p><p class='mono'> " . htmlspecialchars($zipcode) . "</p>";
     print "     <p class='header'>Latitude:</p><p class='mono'> " . htmlspecialchars($lat) . "</p>";
     print "     <p class='header'>Longitude:</p><p class='mono'> " . htmlspecialchars($lon) . "</p>";
     print "     <p class='header'>VPN Status:</p><p class='mono'> " . htmlspecialchars($vpn) . "</p>";
-    print "   </div";
-
+    print "   </div>";
     print "</div>";
+
     print "<div class='w3-container'>";
     print "    <div class='w3-panel w3-card-2 w3-metro-dark-blue'>";
     print "        <h4>Details</h4>";
