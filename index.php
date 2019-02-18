@@ -23,36 +23,36 @@
     $timezone=htmlspecialchars($records['timeZone']);
     $zipcode=htmlspecialchars($records['zipCode']);
 
-    print "<html>";
+    print "<html>\n";
 
-    print "<head>";
-    print "    <meta name='viewport' content='width=device-width, initial-scale=1'>";
-    print "    <link rel='stylesheet' href='w3.css'>";
-    print "    <link rel='stylesheet' href='w3-colors-metro.css'>";
-    print "    <style>";
-    print "        p.header {font-weight:bold;}"; 
-    print "        div.center {margin: auto; width: 80%; padding: 10px;}";
-    print "        td {vertical-align: middle; padding: 15px;)";
-    print "        td.mono {font-family: monospace; font-size:18px!important;}";
-    print "    </style>";
-    print "</head>";
+    print "<head>\n";
+    print "    <meta name='viewport' content='width=device-width, initial-scale=1'>\n";
+    print "    <link rel='stylesheet' href='w3.css'>\n";
+    print "    <link rel='stylesheet' href='w3-colors-metro.css'>\n";
+    print "    <style>\n";
+    print "        p.header {font-weight:bold;}\n"; 
+    print "        div.center {margin: auto; width: 80%; padding: 10px;}\n";
+    print "        td {vertical-align: middle; padding: 15px;)\n";
+    print "        td.mono {font-family: monospace; font-size:18px!important;}\n";
+    print "    </style>\n";
+    print "</head>\n";
 
-    print "<body>";
+    print "<body>\n";
     
     print "<div class='w3-container'>";
     print "    <div class='w3-panel w3-card-2 w3-metro-dark-blue'>";
     print "        <h2>This is how your browser appears to other sites.</h2>";
     print "        <p>This page echoes back to you several pieces of data that web sites 'know' about you. It is meant as a situational awareness tool for you to see how your device presents itself to other sites. It also leverages free <a href src='https://lite.ip2location.com/'>IP2Location</a> databases to show your IP location and such. It is not 100% accurate.</p>";
     print "    </div>";
-    print "</div>";
+    print "</div>\n";
 
     print "  <div class='center w3-panel w3-card-2 w3-round-xlarge'>";
     print "     <table class='w3-table-all'>";
-    print "     <h4>General Data:</h4>"; 
-    print "         <thead><tr class='w3-light-grey'><th>Item</th><th>Value</th></tr></thead>";
-    print "         <tr class='w3-hover-blue'><td class='header'>Your IP Address:</td><td class='mono'>$ip</td></tr>";
-    print "         <tr class='w3-hover-black'><td class='header'>Your User-Agent:</td><td class='mono'>$agent</td></tr>";
-    print "         <tr class='w3-hover-blue'><td class='header'>HTTP Referrer:</td><td class='mono'>$refer</td></tr>";
+    print "     <h4>General Data:</h4>\n"; 
+    print "         <thead><tr class='w3-light-grey'><th>Item</th><th>Value</th></tr></thead>\n";
+    print "         <tr class='w3-hover-blue'><td class='header'>Your IP Address:</td><td class='mono'>$ip</td></tr>\n";
+    print "         <tr class='w3-hover-black'><td class='header'>Your User-Agent:</td><td class='mono'>$agent</td></tr>\n";
+    print "         <tr class='w3-hover-blue'><td class='header'>HTTP Referrer:</td><td class='mono'>$refer</td></tr>\n";
     print "     </table>";
     print "     </br>";
     print "  </div>";
@@ -60,15 +60,15 @@
     
     print "  <div class='center w3-panel w3-card-2 w3-round-xlarge'>";
     print "     <h4>IP2Location Data:</h4> <!-- https://github.com/chrislim2888/IP2Location-PHP-Module -->"; 
-    print "     <table class='w3-table-all'>";
-    print "         <thead><tr class='w3-light-grey'><th>Item</th><th>IP2Location Value</th></tr></thead>";
-    print "         <tr class='w3-hover-blue'><td class='header'>Country Name (Code):</td><td class='mono'>$countryname ( $countrycode )</td></tr>";
-    print "         <tr class='w3-hover-black'><td class='header'>City, Region, Zip Code:</td><td class='mono'>$city, $region    $zipcode</td></tr>";
-    print "         <tr class='w3-hover-blue'><td class='header'>Latitude, Longitude:</td><td class='mono'>$latlon</td></tr>";
-    print "         <tr class='w3-hover-black'><td class='header'>VPN Status:</td><td class='mono'>$vpn</td></tr>";
-    print "     </table>";
-    print "     </br>";
-    print "   </div>";
+    print "     <table class='w3-table-all'>\n";
+    print "         <thead><tr class='w3-light-grey'><th>Item</th><th>IP2Location Value</th></tr></thead>\n";
+    print "         <tr class='w3-hover-blue'><td class='header'>Country Name (Code):</td><td class='mono'>$countryname ( $countrycode )</td></tr>\n";
+    print "         <tr class='w3-hover-black'><td class='header'>City, Region, Zip Code:</td><td class='mono'>$city, $region    $zipcode</td></tr>\n";
+    print "         <tr class='w3-hover-blue'><td class='header'>Latitude, Longitude:</td><td class='mono'>$latlon</td></tr>\n";
+    print "         <tr class='w3-hover-black'><td class='header'>VPN Status:</td><td class='mono'>$vpn</td></tr>\n";
+    print "     </table>\n";
+    print "     </br>\n";
+    print "   </div>\n";
 
     print "<div class='w3-container'>";
     print "    <div class='w3-panel w3-card-2 w3-metro-dark-blue'>";
