@@ -3,7 +3,7 @@
     
     $ip=$_SERVER['REMOTE_ADDR'];
     $agent=htmlspecialchars($_SERVER['HTTP_USER_AGENT']);
-    $refer=htmlspecialchars($_SERVER['HTTP-REFERER']);
+    $refer=htmlspecialchars($_SERVER['HTTP_REFERER']);
 
     # IP2Location Stuff
     $db = new \IP2Location\Database('./databases/IP2PROXY-LITE-PX4.BIN', \IP2Location\Database::FILE_IO);
