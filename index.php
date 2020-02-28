@@ -70,8 +70,8 @@
     print "         <tr class='w3-hover-blue'><td class='header'>Latitude, Longitude:</td><td class='mono'>$latlon</td></tr>\n";
     print "         <tr class='w3-hover-black'><td class='header'>VPN Status:</td><td class='mono'>$vpn</td></tr>\n";
     print "         <tr class='w3-hover-black'><td class='header'>Proxy Type:</td><td class='mono'>$proxyType</td></tr>\n";
-    print "         <tr class='w3-hover-black'><td class='header'>VPN Status:</td><td class='mono'>$isp</td></tr>\n";
-    print "         <tr class='w3-hover-black'><td class='header'>Proxy Type:</td><td class='mono'>$usageType</td></tr>\n";
+    print "         <tr class='w3-hover-black'><td class='header'>VPN ISP:</td><td class='mono'>$isp</td></tr>\n";
+    print "         <tr class='w3-hover-black'><td class='header'>Usage Type:</td><td class='mono'>$usageType</td></tr>\n";
     print "     </table>\n";
     print "     </br>\n";
     print "   </div>\n";
