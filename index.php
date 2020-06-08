@@ -5,29 +5,28 @@
     $agent=htmlspecialchars($_SERVER['HTTP_USER_AGENT']);
     $refer=htmlspecialchars($_SERVER['HTTP_REFERER']);
 
-    # IP2Location Stuff
-    $db = new \IP2Location\Database('./databases/IP2PROXY-LITE-PX8.BIN', \IP2Location\Database::FILE_IO);
-    $ip=$_SERVER['REMOTE_ADDR'];
-    $records = $db->lookup($ip, \IP2Location\Database::ALL);
-    $vpn=htmlspecialchars($records['countryCode']);
-    $proxyType=htmlspecialchars($records['proxy_type']);
-    $isp=htmlspecialchars($records['isp']);
-    $usageType=htmlspecialchars($records['usage_type']);
+    // Web Service
+    $ws = new \IP2Location\WebService('demo', 'WS24', false);
+    $records = $ws->lookup($ip, [
+        'continent', 'country', 'region', 'city', 'geotargeting', 'country_groupings', 'time_zone_info',
+    ], 'en');
 
-    $db = new \IP2Location\Database('./databases/IP2LOCATION-LITE-DB11.BIN', \IP2Location\Database::FILE_IO);
-    $records = $db->lookup($ip, \IP2Location\Database::ALL);
-    $countrycode=htmlspecialchars($records['countryCode']);
-    $countryname=htmlspecialchars($records['countryName']);
-    $region=htmlspecialchars($records['regionName']);
-    $city=htmlspecialchars($records['cityName']);
-    $lat=$records['latitude'];
-    $lon=$records['longitude'];
+    $countrycode=htmlspecialchars($records['country_code']);
+    $countryname=htmlspecialchars($records['country_name']);
+    $region=htmlspecialchars($records['region_name']);
+    $city=htmlspecialchars($records['city_name']);
+    $lat=htmlspecialchars($records['latitude']);
+    $lon=htmlspecialchars($records['longitude']);
+    $zipcode=htmlspecialchars($records['zip_code']);
+    $timecode=htmlspecialchars($records['time_code']);
+    $isp=htmlspecialchars($records['isp']);
+    $net_speed=htmlspecialchars($records['net_speed']);
+    $areacode=htmlspecialchars($records['area_code']);
+    $usageType=htmlspecialchars($records['usage_type']);
     $latlon=htmlspecialchars($lat) . ", " . htmlspecialchars($lon);
     $timezone=htmlspecialchars($records['timeZone']);
-    $zipcode=htmlspecialchars($records['zipCode']);
 
     print "<html>\n";
-
     print "<head>\n";
     print "    <meta name='viewport' content='width=device-width, initial-scale=1'>\n";
     print "    <link rel='stylesheet' href='w3.css'>\n";
@@ -39,7 +38,6 @@
     print "        td.mono {font-family: monospace; font-size:18px!important;}\n";
     print "    </style>\n";
     print "</head>\n";
-
     print "<body>\n";
 
     print "<div class='w3-container'>\n";
@@ -68,9 +66,9 @@
     print "         <tr class='w3-hover-blue'><td class='header'>Country Name (Code):</td><td class='mono'>$countryname ( $countrycode )</td></tr>\n";
     print "         <tr class='w3-hover-black'><td class='header'>City, Region, Zip Code:</td><td class='mono'>$city, $region    $zipcode</td></tr>\n";
     print "         <tr class='w3-hover-blue'><td class='header'>Latitude, Longitude:</td><td class='mono'>$latlon</td></tr>\n";
-    print "         <tr class='w3-hover-black'><td class='header'>VPN Status:</td><td class='mono'>$vpn</td></tr>\n";
-    print "         <tr class='w3-hover-black'><td class='header'>Proxy Type:</td><td class='mono'>$proxyType</td></tr>\n";
-    print "         <tr class='w3-hover-black'><td class='header'>VPN ISP:</td><td class='mono'>$isp</td></tr>\n";
+    //print "         <tr class='w3-hover-black'><td class='header'>VPN Status:</td><td class='mono'>$vpn</td></tr>\n";
+    //print "         <tr class='w3-hover-black'><td class='header'>Proxy Type:</td><td class='mono'>$proxyType</td></tr>\n";
+    print "         <tr class='w3-hover-black'><td class='header'>ISP and Net Speed:</td><td class='mono'>$isp, $net_speed</td></tr>\n";
     print "         <tr class='w3-hover-black'><td class='header'>Usage Type:</td><td class='mono'>$usageType</td></tr>\n";
     print "     </table>\n";
     print "     </br>\n";
