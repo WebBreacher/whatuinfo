@@ -10,9 +10,6 @@
     $ip=$_SERVER['REMOTE_ADDR'];
     $records = $db->lookup($ip, \IP2Location\Database::ALL);
     $vpn=htmlspecialchars($records['countryCode']);
-    $proxyType=htmlspecialchars($records['proxy_type']);
-    $isp=htmlspecialchars($records['isp']);
-    $usageType=htmlspecialchars($records['usage_type']);
 
     $db = new \IP2Location\Database('./databases/IP2LOCATION-LITE-DB11.BIN', \IP2Location\Database::FILE_IO);
     $records = $db->lookup($ip, \IP2Location\Database::ALL);
@@ -67,11 +64,9 @@
     print "         <thead><tr class='w3-light-grey'><th>Item</th><th>IP2Location Value</th></tr></thead>\n";
     print "         <tr class='w3-hover-blue'><td class='header'>Country Name (Code):</td><td class='mono'>$countryname ( $countrycode )</td></tr>\n";
     print "         <tr class='w3-hover-black'><td class='header'>City, Region, Zip Code:</td><td class='mono'>$city, $region    $zipcode</td></tr>\n";
-    print "         <tr class='w3-hover-blue'><td class='header'>Latitude, Longitude:</td><td class='mono'>$latlon</td></tr>\n";
+    print "         <tr class='w3-hover-blue'><td class='header'>City Latitude, Longitude:</td><td class='mono'>$latlon</td></tr>\n";
+    print "         <tr class='w3-hover-black'><td class='header'>Time Zone:</td><td class='mono'>$timezone</td></tr>\n";
     print "         <tr class='w3-hover-black'><td class='header'>VPN Status:</td><td class='mono'>$vpn</td></tr>\n";
-    print "         <tr class='w3-hover-black'><td class='header'>Proxy Type:</td><td class='mono'>$proxyType</td></tr>\n";
-    print "         <tr class='w3-hover-black'><td class='header'>VPN ISP:</td><td class='mono'>$isp</td></tr>\n";
-    print "         <tr class='w3-hover-black'><td class='header'>Usage Type:</td><td class='mono'>$usageType</td></tr>\n";
     print "     </table>\n";
     print "     </br>\n";
     print "   </div>\n";
