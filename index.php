@@ -8,7 +8,8 @@
 
     # IP2Location Stuff
     $db = new \IP2Location\Database('./databases/IP2PROXY-LITE-PX8.BIN', \IP2Location\Database::FILE_IO);
-    $ip=$_SERVER['REMOTE_ADDR'];
+    #$ip=$_SERVER['REMOTE_ADDR'];  // Not used when hosted through CloudFlare/Proxy
+    $ip=$fwd;
     $records = $db->lookup($ip, \IP2Location\Database::ALL);
     $vpn=htmlspecialchars($records['countryCode']);
 
