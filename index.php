@@ -42,7 +42,7 @@
     print "<div class='w3-container'>\n";
     print "    <div class='w3-panel w3-card-2 w3-metro-dark-blue'>\n";
     print "        <h2>This is how your browser appears to other sites.</h2>\n";
-    print "        <p>This page echoes back to you several pieces of data that web sites 'know' about you. It is meant as a situational awareness tool for you to see how your device presents itself to other sites. It also leverages free <a href src='https://lite.ip2location.com/'>IP2Location</a> databases to show your IP location and such. It is not 100% accurate.</p>\n";
+    print "        <p>This page echoes back to you several pieces of data that web sites 'know' about you. It is meant as a situational awareness tool for you to see how your device presents itself to other sites. It also leverages free <a href='https://lite.ip2location.com/'>IP2Location</a> databases to show your IP location and such. It is not 100% accurate.</p>\n";
     print "    </div>\n";
     print "</div>\n";
 
@@ -74,11 +74,11 @@
     print "<div class='w3-container'>\n";
     print "    <div class='w3-panel w3-card-2 w3-metro-dark-blue'>\n";
     print "        <h4>Details</h4>\n";
-    print "        <p>This site created and maintained by Micah (<a href src='https://twitter.com/webbreacher' target='_blank'>WebBreacher</a>) Hoffman (<a href src='https://webbreacher.com' target='_blank'>https://webbreacher.com</a>). HUGE thank you to the fabulous <a href src='https://www.w3school.com' target='_blank'>https://www.w3school.com</a> site for all their HTML/CSS info. Code for this site is available at <a href src='https://github.com/WebBreacher/whatuinfo'>https://github.com/WebBreacher/whatuinfo</a></p>\n";
+    print "        <p>This site created and maintained by Micah (<a href='https://twitter.com/webbreacher' target='_blank'>WebBreacher</a>) Hoffman (<a href='https://webbreacher.com' target='_blank'>https://webbreacher.com</a>). HUGE thank you to the fabulous <a href='https://www.w3schools.com' target='_blank'>https://www.w3schools.com</a> site for all their HTML/CSS info. Code for this site is available at <a href='https://github.com/WebBreacher/whatuinfo'>https://github.com/WebBreacher/whatuinfo</a>.</p>\n";
+    print "        <p style='font-size:70%;'>v1.1</p>\n";
     print "    </div>\n";
     print "</div>\n";
     print "<!-- Thanks for reading all the way down to the bottom and looking at my code! --- Micah -->\n";
     print "</body>\n";
     print "</html>\n";
-
 ?>
