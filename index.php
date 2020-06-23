@@ -1,7 +1,8 @@
 <?php
     require_once 'IP2Location.php';
 
-    $ip=$_SERVER['REMOTE_ADDR'];
+    #$ip=$_SERVER['REMOTE_ADDR']; // Not used when hosted through CloudFlare/Proxy
+    $fwd=$_SERVER['HTTP_X_FORWARDED_FOR'];
     $agent=htmlspecialchars($_SERVER['HTTP_USER_AGENT']);
     $refer=htmlspecialchars($_SERVER['HTTP_REFERER']);
 
@@ -50,7 +51,7 @@
     print "     <table class='w3-table-all'>\n";
     print "     <h4>General Data:</h4>\n";
     print "         <thead><tr class='w3-light-grey'><th>Item</th><th>Value</th></tr></thead>\n";
-    print "         <tr class='w3-hover-blue'><td class='header'>Your IP Address:</td><td class='mono'>$ip</td></tr>\n";
+    print "         <tr class='w3-hover-blue'><td class='header'>Your IP Address:</td><td class='mono'>$fwd</td></tr>\n";
     print "         <tr class='w3-hover-black'><td class='header'>Your User-Agent:</td><td class='mono'>$agent</td></tr>\n";
     print "         <tr class='w3-hover-blue'><td class='header'>HTTP Referrer:</td><td class='mono'>$refer</td></tr>\n";
     print "     </table>\n";
@@ -75,7 +76,7 @@
     print "    <div class='w3-panel w3-card-2 w3-metro-dark-blue'>\n";
     print "        <h4>Details</h4>\n";
     print "        <p>This site created and maintained by Micah (<a href='https://twitter.com/webbreacher' target='_blank'>WebBreacher</a>) Hoffman (<a href='https://webbreacher.com' target='_blank'>https://webbreacher.com</a>). HUGE thank you to the fabulous <a href='https://www.w3schools.com' target='_blank'>https://www.w3schools.com</a> site for all their HTML/CSS info. Code for this site is available at <a href='https://github.com/WebBreacher/whatuinfo'>https://github.com/WebBreacher/whatuinfo</a>.</p>\n";
-    print "        <p style='font-size:70%;'>v1.1</p>\n";
+    print "        <p style='font-size:70%;'>v1.2</p>\n";
     print "    </div>\n";
     print "</div>\n";
     print "<!-- Thanks for reading all the way down to the bottom and looking at my code! --- Micah -->\n";
