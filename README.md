@@ -4,7 +4,7 @@ This repository has the data required to run the <https://whatu.info> web site.
 
 # What?
 
-The <https://whatu.info> site is meant as a safe place for people to perform lookups on their browser and its IP address. We do not track your browser or log anything meaningful about your traffic. Use the sites for your bots and scripts to check IPs and User Agents. Since I added the IP2Location lookups, you can also get geoip data and whether your IP is associated with Tor or a VPN. Because I'm using the free databases for IP2Location, the data is not as up to date as that of the actual <https://ip2location.com> site.
+The <https://whatu.info> site is meant as a safe place for people to perform lookups on their browser and its IP address. We do not track your browser or log anything meaningful about your traffic. Use the sites for your bots and scripts to check IPs and User Agents.
 
 # Contributors
 
