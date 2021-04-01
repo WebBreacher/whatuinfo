@@ -81,6 +81,7 @@
     print "    </div>\n";
     print "</div>\n";
     print "<!-- Thanks for reading all the way down to the bottom and looking at my code! --- Micah -->\n";
+    print "Favicon by <a href='https://freeicons.io/profile/714'>Raj Dev</a> on <a href='https://freeicons.io'>freeicons.io</a>"
     print "</body>\n";
     print "</html>\n";
 ?>
